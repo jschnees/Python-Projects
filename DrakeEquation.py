@@ -13,17 +13,11 @@ class DrakeEquation():
     def Data(self):
         
         R = int(input("The rate of formation of stars suitable for the development of intelligent life. "))
-
         fp = float(input("The fraction of those stars with planetary systems. "))
-
         ne = float(input("The number of planets, per solar system, with an environment suitable for life. "))
-
         fl = float(input("The fraction of suitable planets on which life actually appears. "))
-
         fi = float(input("The fraction of life bearing planets on which intelligent life emerges. "))
-
         fc = float(input("The fraction of civilizations that develop a technology that releases detectable signs of their existence into space. "))
-
         L = float(input("The length of time such civilizations release detectable signals into space. "))
 
 
