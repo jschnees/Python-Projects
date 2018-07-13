@@ -39,7 +39,10 @@ def makeWindow () :
     addyVar - contact address
     noteVar - contact notes
     select - holding variable
-
+    btnClr - button colors
+    bgClr - background color for window
+    fgClr - font color
+    entClr - entry text box color
 
     """
     global nameVar, phoneVar, emailVar, addyVar, noteVar, select
@@ -47,6 +50,7 @@ def makeWindow () :
     btnClr = '#638BB3'
     bgClr = '#708090'
     fgClr = '#ffffff'
+    entClr = '#939393'
     
     win = Tk()
     
@@ -61,31 +65,31 @@ def makeWindow () :
     Label(frame1, text="Name: ",bg=bgClr, fg=fgClr, width=6).grid(row=0, column=0, sticky=W)
     nameVar = StringVar()
     # Text Box for Name
-    name = Entry(frame1, textvariable=nameVar, width=40, bg='#939393', relief='flat').grid(row=0, column=1, sticky=W)
+    name = Entry(frame1, textvariable=nameVar, width=40, bg=entClr, relief='flat').grid(row=0, column=1, sticky=W)
 
     # Label for Phone Number
     Label(frame1, text="Phone: ",bg=bgClr, fg=fgClr, width=6).grid(row=1, column=0, sticky=W)
     phoneVar= StringVar()
     # Text Box for Phone Number
-    phone= Entry(frame1, textvariable=phoneVar, width=40, bg='#939393', relief='flat').grid(row=1, column=1, sticky=W)
+    phone= Entry(frame1, textvariable=phoneVar, width=40, bg=entClr, relief='flat').grid(row=1, column=1, sticky=W)
 
     # Label for Email
     Label(frame1, text="Email: ",bg=bgClr, fg=fgClr, width=6).grid(row=2, column=0, sticky=W)
     emailVar= StringVar()
     # Text Box for Email
-    email= Entry(frame1, textvariable=emailVar, width=40, bg='#939393', relief='flat').grid(row=2, column=1, sticky=W)
+    email= Entry(frame1, textvariable=emailVar, width=40, bg=entClr, relief='flat').grid(row=2, column=1, sticky=W)
 
     # Label for Address
     Label(frame1, text="Address: ",bg=bgClr, fg=fgClr, width=6).grid(row=3, column=0, sticky=W)
     addyVar= StringVar()
     # Text Box for Address  
-    addy= Entry(frame1, textvariable=addyVar, width=40, bg='#939393', relief='flat').grid(row=3, column=1, sticky=W)
+    addy= Entry(frame1, textvariable=addyVar, width=40, bg=entClr, relief='flat').grid(row=3, column=1, sticky=W)
  
     # Label for Notes
     Label(frame1, text="Notes: ",bg=bgClr, fg=fgClr, width=6).grid(row=4, column=0, sticky=W)
     noteVar= StringVar()
     # Text Box for Notes
-    note= Entry(frame1, textvariable=noteVar, width=40, bg='#939393', relief='flat').grid(row=4, column=1, sticky=W)
+    note= Entry(frame1, textvariable=noteVar, width=40, bg=entClr, relief='flat').grid(row=4, column=1, sticky=W)
     
     # Row of buttons
     frame2 = Frame(win)
