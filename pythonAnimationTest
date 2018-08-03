@@ -1,0 +1,50 @@
+import sys
+import random
+import pygame
+from pygame.constants import QUIT, K_ESCAPE, KEYDOWN
+import pyganim
+
+bcatAni = pyganim.PygAnimation([('assets/bcat/000.png', 3000),
+                             ('assets/bcat/001.png', 100),
+                             ('assets/bcat/002.png', 100),
+                             ('assets/bcat/003.png', 100),
+                             ('assets/bcat/004.png', 100),
+                             ('assets/bcat/005.png', 100),
+                             ('assets/bcat/006.png', 3050),
+                             ('assets/bcat/007.png', 100),
+                             ('assets/bcat/008.png', 100),
+                             ('assets/bcat/009.png', 100),
+                             ('assets/bcat/010.png', 100),
+                             ('assets/bcat/011.png', 100),
+                             ('assets/bcat/012.png', 100),
+                             ('assets/bcat/013.png', 100),
+                             ('assets/bcat/014.png', 100)])                           
+# start playing the cat animations
+bcatAni.play()
+
+animation_frames = []
+mainClock = pygame.time.Clock()
+screen = pygame.display.set_mode( ( 485, 750 ), 0, 32 )
+image = pygame.image.load( "bg.png" ).convert_alpha()
+width, height = image.get_size()
+
+w = 485
+h = 750
+# cycle through each section of image 
+for i in range( int( width / w ) ):
+    animation_frames.append( image.subsurface( ( i * w, 0, w, h ) ) )
+counter = 0
+
+while True:
+
+    # close program on escape key
+    for evt in pygame.event.get():
+        if evt.type == QUIT or ( evt.type == KEYDOWN and evt.key == K_ESCAPE ) :
+            sys.exit()
+
+    bcatAni.blit(screen, (300, 60))
+    screen.blit( animation_frames[counter], ( 0, 0 ) )
+    counter = ( counter + 1 ) % 13
+    
+    pygame.display.update()
+    mainClock.tick(10) # FPS setting.
